@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#
+*/new_subject_manifests/*
+*/temp.jpg
