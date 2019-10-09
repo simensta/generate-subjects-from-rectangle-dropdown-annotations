@@ -5,34 +5,34 @@
 Script `generate_transcription_subjects.py` is run from the command line. To read further about the arguments required to run this script, you can run the following:
 
 ```
-python generate_transcription_subjects.py -h
-usage: generate_transcription_subjects.py [-h]
-                                          subject_export reduction_export
-                                          subject_ids
+$ python generate_transcription_subjects.py -h
+usage: generate_transcription_subjects.py [-h] -subject_export SUBJECT_EXPORT
+                                          -reduction_export REDUCTION_EXPORT
+                                          -subject_ids SUBJECT_IDS
 
 Create a new subject manifest from the rectangle+dropdown annotations for
 existing subjects
 
-positional arguments:
-  subject_export    The file path to the subject export from the Zooniverse
-                    project builder
-  reduction_export  The file path to the reduction export from Caesar
-  subject_ids       String of subject ids seperated by commas (no space) to be
-                    processed
-
 optional arguments:
-  -h, --help        show this help message and exit
-
+  -h, --help            show this help message and exit
+  -subject_export SUBJECT_EXPORT
+                        The file path to the subject export from the
+                        Zooniverse project builder
+  -reduction_export REDUCTION_EXPORT
+                        The file path to the reduction export from Caesar
+  -subject_ids SUBJECT_IDS
+                        String of subject ids seperated by commas (no space)
+                        to be processed
 ```
 
-Below is an example of how to run the script:
+Below is an example of how to run the script from the command line:
 
 ```
 python generate_transcription_subjects.py -subject_export project-name-subjects.csv -reduction_export caesar-reduction-export.csv -subject_ids 17025343,17032151,17032161,17085641,17085656,17160441,17160652,17032225
 ```
 
 ## Reduction Export Fields:
-The following bullet list may be helpful in understanding the reduction export.
+The following may be helpful in understanding the fields in the Caesar reduction export. For a more thorough and up-to-date description, see the aggregation-for-caesar docs for the [rectangle reducer](https://aggregation-caesar.zooniverse.org/reducers.html#rectangle-reducer) and the [dropdown reducer](https://aggregation-caesar.zooniverse.org/reducers.html#dropdown-reducer)
 
  - **id**: Caesar Id for reducer entry
  - **reducer_key**: Key name specified for Caesar reducer
@@ -40,7 +40,7 @@ The following bullet list may be helpful in understanding the reduction export.
  - **subject_id**: Specifies the id of the subject that was classified
  - **created_at**: Timestamp for the creation of the reduction for the subject in Caesar
  - **updated_at**: Timestamp for the last time this reduction was updated in Caesar
- - **subgroup** - this project is not using this field
+ - **subgroup** - This project does not use this field
  - **data.frame0**: This field contains the aggregations data for the subject
     - **data.frame0.T2_tool0_rec_x**: all of the x coordinates from all the annotations for this row's subject
     - **T2_tool0_rec_y**: all of the y coordinates from all the annotations for this row's subject
