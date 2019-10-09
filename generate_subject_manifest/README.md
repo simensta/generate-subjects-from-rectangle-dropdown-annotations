@@ -2,7 +2,7 @@
 
 ## Running the Script
 
-Script `generate_transcription_subjects.py` is run from the command line. To read further about the arguments required to run this script, you can run the following:
+`generate_transcription_subjects.py` is run from the command line. To read further about the arguments required to run this script, please see the help parameter (i.e., `-h`):
 
 ```
 $ python generate_transcription_subjects.py -h
@@ -32,7 +32,7 @@ python generate_transcription_subjects.py -subject_export project-name-subjects.
 ```
 
 ## Reduction Export Fields:
-The following may be helpful in understanding the fields in the Caesar reduction export. For a more thorough and up-to-date description, see the aggregation-for-caesar docs for the [rectangle reducer](https://aggregation-caesar.zooniverse.org/reducers.html#rectangle-reducer) and the [dropdown reducer](https://aggregation-caesar.zooniverse.org/reducers.html#dropdown-reducer)
+The following is a description of some of the reduction fields evaluated in `generate_transcription_subjects.py`. For a more thorough and up-to-date description, see the aggregation-for-caesar docs for the [rectangle reducer](https://aggregation-caesar.zooniverse.org/reducers.html#rectangle-reducer) and the [dropdown reducer](https://aggregation-caesar.zooniverse.org/reducers.html#dropdown-reducer).
 
  - **id**: Caesar Id for reducer entry
  - **reducer_key**: Key name specified for Caesar reducer
@@ -40,8 +40,7 @@ The following may be helpful in understanding the fields in the Caesar reduction
  - **subject_id**: Specifies the id of the subject that was classified
  - **created_at**: Timestamp for the creation of the reduction for the subject in Caesar
  - **updated_at**: Timestamp for the last time this reduction was updated in Caesar
- - **subgroup** - This project does not use this field
- - **data.frame0**: This field contains the aggregations data for the subject
+ - **data.frame0**: This field contains the aggregation data for the subject
     - **data.frame0.T2_tool0_rec_x**: all of the x coordinates from all the annotations for this row's subject
     - **T2_tool0_rec_y**: all of the y coordinates from all the annotations for this row's subject
     - **T2_tool0_rec_width**: all of the width values from all the annotations for this row's subject
@@ -50,11 +49,5 @@ The following may be helpful in understanding the fields in the Caesar reduction
         - An example: [0, 1, 0, -1, 1, 2, 0, 1, 2, 0, 2, 1]
         - "the `_cluster_labels` value is a list of numbers that 'name' each cluster, 
         there is one value for each classification.  A value of `-1` means it does not belong to any cluster.
-        So in this example the first, third, seventh, and tenth classifications were assigned to the same cluster." 
-    - **T2_tool0_details**
+        So in this example the first, third, seventh, and tenth classifications were assigned to the same cluster." - Coleman Krawczyk, [Slack](https://zooniverse.slack.com/archives/C5DMXTVQC/p1518020423000269?thread_ts=1517933068.000918&cid=C5DMXTVQC) 
     - **T2_tool0_clusters_count**: _The number of independent contributions used to calculate each cluster_
-    - **T2_tool0_clusters_x**
-    - **T2_tool0_clusters_y**
-    - **T2_tool0_clusters_width**
-    - **T2_tool0_clusters_height**
-    - **T2_tool0_clusters_details**
